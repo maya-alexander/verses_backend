@@ -18,7 +18,7 @@ Brand.create!(name: "Kirrin Finch", url: "https://kirrinfinch.com/", size_chart:
 Brand.create!(name: "Gender Free World", url: "https://www.genderfreeworld.com/", size_chart: "https://www.genderfreeworld.com/pages/our-sizing")
 Brand.create!(name: "Stuzo Clothing", url: "https://www.stuzoclothing.com/")
 
-Plan.create!(items: 4, price: 89,  description: "Great for a monthly pick-me-up with versatile essentials and statement pieces.", features: "1 shipment/month,Basic closet access")
+Plan.create!(items: 4, price_cents: 89,  description: "Great for a monthly pick-me-up with versatile essentials and statement pieces.", features: "1 shipment/month,Basic closet access")
 Plan.create!(items: 8, price: 135, description: "Great for outfit updates and special occasions, including work and weekend looks.", features: "2 shipments/month,Full closet access,Rent 4 items at a time")
 Plan.create!(items: 16, price: 159, description: "Great for weekly newness for work, weekends, special events and more.", features: '4 shipments/month,Full closet access,Rent 4 items at a time')
 
