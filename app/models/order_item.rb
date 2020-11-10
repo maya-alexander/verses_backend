@@ -20,7 +20,7 @@
 #  index_order_items_on_order_id_and_size_id  (order_id,size_id) UNIQUE
 #
 class OrderItem < ApplicationRecord
-  monetize :price_cents, allow_nil: true
+  money :price_cents, allow_nil: true
   validates :order_id, :size_id, :product_id, :quantity, presence: true
 
   belongs_to :order

@@ -30,7 +30,7 @@
 #  index_orders_on_member_id  (member_id)
 #
 class Order < ApplicationRecord
-  monetize :total_cost_cents, :tax_cents, :sub_total_cents, :shipping_cost_cents, allow_nil: true
+  money :total_cost_cents, :tax_cents, :sub_total_cents, :shipping_cost_cents, allow_nil: true
 
   validates :member_id, presence: true
   validates :shipped_date, :ordered_date, :shipping_cost, :tax, :number, :total_cost, presence: true, allow_nil: true
