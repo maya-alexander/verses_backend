@@ -42,9 +42,7 @@ class Order < ApplicationRecord
 
 
   def checkout(cart_id)
-    byebug
    cart = Cart.find(cart_id)
-   byebug
 
   cart.cart_items.map do |cart_item|
      OrderItem.create_order_item(cart_item, self.id)
@@ -71,7 +69,6 @@ class Order < ApplicationRecord
   end
 
   def calculate_subtotal
-    byebug
     if self.order_items.count === 1
       self.update!(sub_total: self.order_items.first.price)
     else
