@@ -24,8 +24,8 @@
 #  index_products_on_brand_id_and_product_number_and_images  (brand_id,product_number,images) UNIQUE
 #
 class Product < ApplicationRecord
-  validates :brand_id, :price_cents, :description, :product_number, presence: true
   monetize :price_cents, allow_nil: true
+  validates :brand_id, :price_cents, :description, :product_number, presence: true
   after_create :create_size_range_string, :create_price_string
 
   belongs_to :brand
