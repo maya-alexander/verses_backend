@@ -4,7 +4,7 @@ class CreateApiV1Products < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.integer :product_number, null: false
       t.integer :brand_id, null: false
-      t.money :price
+      t.monetize :price
       t.text :description, null: false
       t.text :images
       t.string :details

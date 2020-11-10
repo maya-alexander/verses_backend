@@ -4,7 +4,7 @@ class CreateApiV1OrderItems < ActiveRecord::Migration[6.0]
       t.integer :member_id, null: :false
       t.integer :size_id, null: :false
       t.integer :product_id, null: :false
-      t.money :price, null: :false
+      t.monetize :price, null: :false
       t.integer :quantity, null: :false
       t.index :member_id
       t.integer :order_id, null: false
