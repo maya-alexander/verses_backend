@@ -7,10 +7,10 @@ class CreateApiV1Orders < ActiveRecord::Migration[6.0]
       t.datetime :ordered_date
       t.datetime :shipped_date
       t.index :member_id
-      t.monetize :tax
-      t.monetize :sub_total
-      t.monetize :shipping_cost
-      t.monetize :total_cost
+      t.money :tax
+      t.money :sub_total
+      t.money :shipping_cost
+      t.money :total_cost
       t.string :total_cost_string
       t.string :sub_total_string
       t.string :tax_string
