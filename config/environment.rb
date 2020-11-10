@@ -6,4 +6,3 @@ Rails.application.initialize!
 
 require 'bundler'
 Bundler.require
-require 'money-rails'
