@@ -21,8 +21,8 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = User.find_by(id: params[:id])
     cart = user.cart
-    render json: { user: user }
-    # render json: { user: user cart: cart}
+    # render json: { user: user }
+    render json: { user: user cart: cart}
   end
   
   private
