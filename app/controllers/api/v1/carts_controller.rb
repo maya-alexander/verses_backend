@@ -29,6 +29,7 @@ class Api::V1::CartsController < ApplicationController
 
   private
   def set_cart
+    puts params
     @cart = Cart.find_by(member_id: params[:user_id])
   end
 
