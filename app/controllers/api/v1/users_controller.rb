@@ -20,7 +20,9 @@ before_action :set_user, except: [:new, :create, :index]
   end
 
   def show
-    render json: { user: @user }
+    cart = @user.cart
+    cart_items = cart.cart_items
+    render json: { user: @user, cart: cart, cart_items: cart_items}
   end
   
   private
