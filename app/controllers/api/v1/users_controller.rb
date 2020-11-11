@@ -1,20 +1,20 @@
 
 class Api::V1::UsersController < ApplicationController
-before_action :set_user, except: [:new, :create]
+before_action :set_user, except: [:new, :create, :index]
   def index
     users = User.all
   end
 
   def create
-    user = User.new(user_params)
-    user.password=(params[:password])
+    @user = User.new(user_params)
+    @user.password=(params[:password])
 
-    if user.save
-      Cart.create!(member_id: user.id)
-      login!(user)
-      render json: user
+    if @user.save
+      Cart.create!(member_id: @user.id)
+      login!(@user)
+      render json: @user
     else
-      render json: user.errors.full_messages, status: 401
+      render json: @user.errors.full_messages, status: 401
     end
 
   end

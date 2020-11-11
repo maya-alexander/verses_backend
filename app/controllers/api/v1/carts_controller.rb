@@ -1,10 +1,12 @@
 class Api::V1::CartsController < ApplicationController
-  before_action :set_cart, except: [:create]
+  # before_action :set_cart, except: [:create]
   before_action :create_price_string
 
   def show
+    @cart = Cart.create_or_find_by(member_id: params[:user_id])
     if @cart
-      render json:{ cart: @cart, cart_items: @cart.cart_items }
+      @cart.create_price_string
+      render json: { cart: @cart, cart_items: @cart.cart_items }
     else
       render json: { status: 401, message: 'could not locate cart.' }
     end
@@ -27,7 +29,7 @@ class Api::V1::CartsController < ApplicationController
 
   private
   def set_cart
-    @cart = Cart.find_by(member_id: params[:user_id])
+    @cart = Cart.create_or_find_by(member_id: params[:user_id])
   end
 
   def create_price_string
