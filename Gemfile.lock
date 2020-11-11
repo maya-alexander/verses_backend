@@ -202,7 +202,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
-  bootsnap (>= 1.4.2)
+  bootsnap (~> 1.5, >= 1.5.1)
   byebug
   faker
   jwt
@@ -212,8 +212,8 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 4.1)
-  rack (~> 2.2, >= 2.2.2)
-  rack-cors
+  rack (~> 2.2, >= 2.2.3)
+  rack-cors (~> 1.1, >= 1.1.1)
   rails (= 6.0.3.4)
   rest-client
   spring

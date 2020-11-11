@@ -20,11 +20,11 @@ gem 'rest-client'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '~> 1.5', '>= 1.5.1', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
-gem 'rack', '~> 2.2', '>= 2.2.2'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+gem 'rack', '~> 2.2', '>= 2.2.3'
 gem 'money-rails', '~>1.12'
 gem 'faker'
 
