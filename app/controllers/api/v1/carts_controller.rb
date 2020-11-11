@@ -3,6 +3,7 @@ class Api::V1::CartsController < ApplicationController
   before_action :create_price_string
 
   def show
+    puts @cart
     if @cart
       @cart.create_price_string
     else
@@ -29,7 +30,7 @@ class Api::V1::CartsController < ApplicationController
 
   private
   def set_cart
-    puts params
+    puts params[:user_id]
     @cart = Cart.find_by(member_id: params[:user_id])
   end
 
