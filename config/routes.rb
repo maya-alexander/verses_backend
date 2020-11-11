@@ -89,7 +89,8 @@ Rails.application.routes.draw do
         resources :orders, only: [:show, :index, :create] do
           post :checkout
         end
-          resources :order_items, only: [:create, :update]
+        
+        resources :order_items, only: [:create, :update]
   
         
         resource :plan_membership, only: [:create, :destroy, :update, :show]

@@ -1,5 +1,5 @@
 class Api::V1::CartsController < ApplicationController
-  # before_action :set_cart, except: [:create]
+  before_action :set_cart, except: [:create]
   before_action :create_price_string
 
   def show
@@ -29,7 +29,7 @@ class Api::V1::CartsController < ApplicationController
 
   private
   def set_cart
-    @cart = Cart.create_or_find_by(member_id: params[:user_id])
+    @cart = Cart.find_by(member_id: params[:user_id])
   end
 
   def create_price_string
