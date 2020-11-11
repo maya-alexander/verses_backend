@@ -5,8 +5,8 @@ class Api::V1::CartsController < ApplicationController
   def show
     if @cart
       @cart.create_price_string
-    elsif
-      Cart.create!(member_id: @user.id)
+    else
+      Cart.create!(member_id: params[:user_id])
       render json: { cart: @cart, cart_items: @cart.cart_items }
     end
     render json: { status: 401, message: 'could not locate cart.' }
