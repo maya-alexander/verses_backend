@@ -3,7 +3,6 @@ class Api::V1::CartsController < ApplicationController
   before_action :create_price_string
 
   def show
-    @cart = Cart.create_or_find_by(member_id: params[:user_id])
     if @cart
       @cart.create_price_string
       render json: { cart: @cart, cart_items: @cart.cart_items }
