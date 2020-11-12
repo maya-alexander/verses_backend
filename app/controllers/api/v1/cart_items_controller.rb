@@ -1,5 +1,6 @@
 class Api::V1::CartItemsController < ApplicationController
-  before_action :set_cart_item, except: :new
+  before_action :set_cart_item, except: :create
+  before_action :set_cart
 
   def create
     if @cart_item
