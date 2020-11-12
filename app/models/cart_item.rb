@@ -27,14 +27,14 @@ class CartItem < ApplicationRecord
     total
   end
 
-  def update_cart_item(cart, type, value, product_id=nil)
+  def update_cart_item(@cart, type, value, product_id=nil)
     if type === 'size'
       size = Size.find_by(size: value, product_id: product_id)
       self.update!(size: size)
       self.update!(size_string: size.size)
     end
     self.update!(quantity: value) if type === 'quantity'
-    cart.create_price_string
+    @cart.create_price_string
   end
 
   def increment
