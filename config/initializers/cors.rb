@@ -8,4 +8,4 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 end
 
-Rails.application.config.hosts << "https://verses.netlify.app"
+Rails.application.config.hosts << "https://verses.netlify.app/"
